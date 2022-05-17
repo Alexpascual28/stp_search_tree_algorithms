@@ -1,0 +1,298 @@
+======= Running Brandon's Python Queue-Based Search Procedure =======
+
+Queen Domination Problem ( 1 x 1 board):
+What is the minimum number of queens required to control this  1 * 1  board?
+
+Strategy: ('A_star', <function zero_heuristic at 0x000000000291CDD8>)
+Search Limit: max_nodes = 5000
+Options: []
+*** starting search ***
+0  
+GOAL STATE:
+  1
+
+The minimum number of queens to cover a  1 * 1  chessboard is equal to the "Path Length" below:
+
+:-)) *SUCCESS* ((-:
+The action path to the solution is:
+(0, 0)
+Path length = 1
+Total nodes tested = 2
+Time taken = 0.0006132 seconds
+
+======= Running Brandon's Python Queue-Based Search Procedure =======
+
+Queen Domination Problem ( 3 x 3 board):
+What is the minimum number of queens required to control this  3 * 3  board?
+
+Strategy: ('A_star', <function zero_heuristic at 0x000000000291CDD8>)
+Search Limit: max_nodes = 5000
+Options: []
+*** starting search ***
+0  
+GOAL STATE:
+  0  0  0
+  0  1  0
+  0  0  0
+
+The minimum number of queens to cover a  3 * 3  chessboard is equal to the "Path Length" below:
+
+:-)) *SUCCESS* ((-:
+The action path to the solution is:
+(1, 1)
+Path length = 1
+Total nodes tested = 6
+Time taken = 0.0025147 seconds
+
+======= Running Brandon's Python Queue-Based Search Procedure =======
+
+Queen Domination Problem ( 4 x 4 board):
+What is the minimum number of queens required to control this  4 * 4  board?
+
+Strategy: ('A_star', <function zero_heuristic at 0x000000000291CDD8>)
+Search Limit: max_nodes = 5000
+Options: []
+*** starting search ***
+0  
+GOAL STATE:
+  1  0  0  0
+  0  0  0  0
+  0  0  1  0
+  0  0  0  0
+
+The minimum number of queens to cover a  4 * 4  chessboard is equal to the "Path Length" below:
+
+:-)) *SUCCESS* ((-:
+The action path to the solution is:
+(0, 0), (2, 2)
+Path length = 2
+Total nodes tested = 23
+Time taken = 0.0305226 seconds
+
+======= Running Brandon's Python Queue-Based Search Procedure =======
+
+Queen Domination Problem ( 5 x 5 board):
+What is the minimum number of queens required to control this  5 * 5  board?
+
+Strategy: ('A_star', <function zero_heuristic at 0x000000000291CDD8>)
+Search Limit: max_nodes = 5000
+Options: []
+*** starting search ***
+0  
+GOAL STATE:
+  1  0  0  0  0
+  0  0  0  0  0
+  0  0  1  0  0
+  0  0  0  0  0
+  0  0  0  0  1
+
+The minimum number of queens to cover a  5 * 5  chessboard is equal to the "Path Length" below:
+
+:-)) *SUCCESS* ((-:
+The action path to the solution is:
+(4, 4), (0, 0), (2, 2)
+Path length = 3
+Total nodes tested = 638
+Time taken = 7.4658206 seconds
+
+======= Running Brandon's Python Queue-Based Search Procedure =======
+
+Queen Domination Problem ( 5 x 6 board):
+What is the minimum number of queens required to control this  5 * 6  board?
+
+Strategy: ('A_star', <function zero_heuristic at 0x000000000291CDD8>)
+Search Limit: max_nodes = 5000
+Options: []
+*** starting search ***
+0  
+GOAL STATE:
+  0  0  0  0  0
+  0  0  0  0  0
+  1  0  0  1  0
+  0  0  0  0  0
+  0  0  0  0  0
+  0  0  0  0  1
+
+The minimum number of queens to cover a  5 * 6  chessboard is equal to the "Path Length" below:
+
+:-)) *SUCCESS* ((-:
+The action path to the solution is:
+(4, 5), (0, 2), (3, 2)
+Path length = 3
+Total nodes tested = 966
+Time taken = 40.8777228 seconds
+
+======= Running Brandon's Python Queue-Based Search Procedure =======
+
+Queen Domination Problem ( 6 x 5 board):
+What is the minimum number of queens required to control this  6 * 5  board?
+
+Strategy: ('A_star', <function zero_heuristic at 0x000000000291CDD8>)
+Search Limit: max_nodes = 5000
+Options: []
+*** starting search ***
+0  
+GOAL STATE:
+  0  0  0  0  0  0
+  1  0  0  1  0  0
+  0  0  0  0  0  0
+  0  0  0  0  0  0
+  0  0  0  0  0  1
+
+The minimum number of queens to cover a  6 * 5  chessboard is equal to the "Path Length" below:
+
+:-)) *SUCCESS* ((-:
+The action path to the solution is:
+(5, 4), (0, 1), (3, 1)
+Path length = 3
+Total nodes tested = 942
+Time taken = 33.5377019 seconds
+
+======= Running Brandon's Python Queue-Based Search Procedure =======
+
+Queen Domination Problem ( 10 x 3 board):
+What is the minimum number of queens required to control this  10 * 3  board?
+
+Strategy: ('A_star', <function zero_heuristic at 0x000000000291CDD8>)
+Search Limit: max_nodes = 5000
+Options: []
+*** starting search ***
+0  
+GOAL STATE:
+  1  0  0  0  0  0  0  0  0  0
+  0  0  0  0  0  0  0  0  0  1
+  0  0  0  0  0  0  0  0  0  1
+
+The minimum number of queens to cover a  10 * 3  chessboard is equal to the "Path Length" below:
+
+:-)) *SUCCESS* ((-:
+The action path to the solution is:
+(9, 2), (0, 0), (9, 1)
+Path length = 3
+Total nodes tested = 902
+Time taken = 16.8255407 seconds
+
+======= Running Brandon's Python Queue-Based Search Procedure =======
+
+Queen Domination Problem ( 3 x 4 board):
+What is the minimum number of queens required to control this  3 * 4  board?
+
+Strategy: ('A_star', <function zero_heuristic at 0x000000000291CDD8>)
+Search Limit: max_nodes = 5000
+Options: []
+*** starting search ***
+0  
+GOAL STATE:
+  1  0  0
+  0  0  0
+  0  0  0
+  0  0  1
+
+The minimum number of queens to cover a  3 * 4  chessboard is equal to the "Path Length" below:
+
+:-)) *SUCCESS* ((-:
+The action path to the solution is:
+(0, 0), (2, 3)
+Path length = 2
+Total nodes tested = 14
+Time taken = 0.0232458 seconds
+
+======= Running Brandon's Python Queue-Based Search Procedure =======
+
+Queen Domination Problem ( 4 x 7 board):
+What is the minimum number of queens required to control this  4 * 7  board?
+
+Strategy: ('A_star', <function zero_heuristic at 0x000000000291CDD8>)
+Search Limit: max_nodes = 5000
+Options: []
+*** starting search ***
+0  
+GOAL STATE:
+  0  0  0  0
+  1  0  0  0
+  0  0  0  0
+  0  0  0  0
+  0  0  1  0
+  0  0  0  0
+  0  0  0  1
+
+The minimum number of queens to cover a  4 * 7  chessboard is equal to the "Path Length" below:
+
+:-)) *SUCCESS* ((-:
+The action path to the solution is:
+(3, 6), (0, 1), (2, 4)
+Path length = 3
+Total nodes tested = 820
+Time taken = 23.0413705 seconds
+
+======= Running Brandon's Python Queue-Based Search Procedure =======
+
+Queen Domination Problem ( 2 x 50 board):
+What is the minimum number of queens required to control this  2 * 50  board?
+
+Strategy: ('A_star', <function zero_heuristic at 0x000000000291CDD8>)
+Search Limit: max_nodes = 5000
+Options: []
+*** starting search ***
+0  
+GOAL STATE:
+  1  0
+  0  0
+  0  0
+  0  0
+  0  0
+  0  0
+  0  0
+  0  0
+  0  0
+  0  0
+  0  0
+  0  0
+  0  0
+  0  0
+  0  0
+  0  0
+  0  0
+  0  0
+  0  0
+  0  0
+  0  0
+  0  0
+  0  0
+  0  0
+  0  0
+  0  0
+  0  0
+  0  0
+  0  0
+  0  0
+  0  0
+  0  0
+  0  0
+  0  0
+  0  0
+  0  0
+  0  0
+  0  0
+  0  0
+  0  0
+  0  0
+  0  0
+  0  0
+  0  0
+  0  0
+  0  0
+  0  0
+  0  0
+  0  0
+  0  1
+
+The minimum number of queens to cover a  2 * 50  chessboard is equal to the "Path Length" below:
+
+:-)) *SUCCESS* ((-:
+The action path to the solution is:
+(0, 0), (1, 49)
+Path length = 2
+Total nodes tested = 102
+Time taken = 6.5759377 seconds
+

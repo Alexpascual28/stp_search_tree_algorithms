@@ -28,11 +28,11 @@
 
 <code>This project implements several search tree algorithms using Python, designed for solving complex combinatorial problems with a focus on optimality and efficiency. The project is structured to handle various problems using uniform cost, depth-first, breadth-first, and A* search algorithms, including an optional heuristic component.</code>
 
-<code>TThe objective of this report is to show the implementation and results of a chess domination puzzle using search algorithms. A domination problem is a type of chess puzzle in which the minimum number of pieces for a specific piece must be found so that they cover (attack or occupy) the whole chessboard.</code>
+<code>The objective of this report is to show the implementation and results of a chess domination puzzle using search algorithms. A domination problem is a type of chess puzzle in which the minimum number of pieces for a specific piece must be found so that they cover (attack or occupy) the whole chessboard.</code>
 
-<code>TIn this case the program must find the minimum number of queens necessary to cover all of the squares of an m * n chessboard, as well as displaying the way in which these queens should be laid out in the board.</code>
+<code>In this case the program must find the minimum number of queens necessary to cover all of the squares of an m * n chessboard, as well as displaying the way in which these queens should be laid out in the board.</code>
 
-<code>TMore info cand be found below in [Theory](#theory) and in [201255350.pdf](https://github.com/Alexpascual28/stp_search_tree_algorithms/blob/main/201255350/201255350.pdf)</code>
+<code>More info cand be found below in [Theory](#theory) and in [201255350.pdf](https://github.com/Alexpascual28/stp_search_tree_algorithms/blob/main/201255350/201255350.pdf)</code>
 
 ---
 

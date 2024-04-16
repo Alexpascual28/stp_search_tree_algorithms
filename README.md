@@ -13,17 +13,14 @@
   <summary>Table of Contents</summary><br>
 
 - [ Overview](#-overview)
-- [ Features](#-features)
+- [ Directory Description](#-features)
 - [ Repository Structure](#-repository-structure)
 - [ Modules](#-modules)
 - [ Getting Started](#-getting-started)
   - [ Installation](#-installation)
   - [ Usage](#-usage)
-  - [ Tests](#-tests)
-- [ Project Roadmap](#-project-roadmap)
+- [ Theory](#theory)
 - [ Contributing](#-contributing)
-- [ License](#-license)
-- [ Acknowledgments](#-acknowledgments)
 </details>
 <hr>
 
@@ -39,7 +36,7 @@ More info cand be found below in [Theory](#theory) and in [201255350.pdf](https:
 
 ---
 
-##  Directory Structure
+##  Directory Description
 
 The project includes the following main directories and files:
 

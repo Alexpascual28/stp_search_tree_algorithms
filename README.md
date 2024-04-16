@@ -168,8 +168,8 @@ Ensure you have Python 3.6 or higher installed on your system. No external libra
 And to run the Knight Coverage problem solver:
 
 > ```console
-> cd /Problems/Knight_problem
-> python knight_search_tester.py
+> $ cd /Problems/Knight_problem
+> $ python knight_search_tester.py
 > ```
 >
 > This will execute the knight problem solver using a depth-first search strategy. The script is set up to run the Knight's Tour problem on various board sizes, which are defined within the script.
@@ -256,7 +256,7 @@ A more detailed explanation about the succesor function can be found in [2012553
 The script redirects its output to a file named `tester_outcome.txt` in the same directory. This file will contain the results of the tests, including the board configurations and the number of queens used. To view the results, open this file using any text editor or use the following command in your CLI:
 
 > ```console
-> cat tester_outcome.txt
+> $ cat tester_outcome.txt
 > ```
 
 ### Knight Coverage Problem Explanation

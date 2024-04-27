@@ -80,8 +80,8 @@ The project includes the following main directories and files:
 
 | File                                                                                                           | Summary                         |
 | ---                                                                                                            | ---                             |
-| [tree.py](https://github.com/Alexpascual28/stp_search_tree_algorithms.git/blob/master/tree.py)                 | <code>► INSERT-TEXT-HERE</code> |
-| [queue_search.py](https://github.com/Alexpascual28/stp_search_tree_algorithms.git/blob/master/queue_search.py) | <code>► INSERT-TEXT-HERE</code> |
+| [tree.py](https://github.com/Alexpascual28/stp_search_tree_algorithms.git/blob/master/tree.py)                 | <code> </code> |
+| [queue_search.py](https://github.com/Alexpascual28/stp_search_tree_algorithms.git/blob/master/queue_search.py) | <code> </code> |
 
 </details>
 
@@ -89,8 +89,8 @@ The project includes the following main directories and files:
 
 | File                                                                                                                                    | Summary                         |
 | ---                                                                                                                                     | ---                             |
-| [FillTester.py](https://github.com/Alexpascual28/stp_search_tree_algorithms.git/blob/master/Problems/Fill_list_problem/FillTester.py)   | <code>► INSERT-TEXT-HERE</code> |
-| [FillProblem.py](https://github.com/Alexpascual28/stp_search_tree_algorithms.git/blob/master/Problems/Fill_list_problem/FillProblem.py) | <code>► INSERT-TEXT-HERE</code> |
+| [FillTester.py](https://github.com/Alexpascual28/stp_search_tree_algorithms.git/blob/master/Problems/Fill_list_problem/FillTester.py)   | <code> </code> |
+| [FillProblem.py](https://github.com/Alexpascual28/stp_search_tree_algorithms.git/blob/master/Problems/Fill_list_problem/FillProblem.py) | <code> </code> |
 
 </details>
 
@@ -98,8 +98,8 @@ The project includes the following main directories and files:
 
 | File                                                                                                                                         | Summary                         |
 | ---                                                                                                                                          | ---                             |
-| [FillArrayTest.py](https://github.com/Alexpascual28/stp_search_tree_algorithms.git/blob/master/Problems/Fill_array_problem/FillArrayTest.py) | <code>► INSERT-TEXT-HERE</code> |
-| [FillArray.py](https://github.com/Alexpascual28/stp_search_tree_algorithms.git/blob/master/Problems/Fill_array_problem/FillArray.py)         | <code>► INSERT-TEXT-HERE</code> |
+| [FillArrayTest.py](https://github.com/Alexpascual28/stp_search_tree_algorithms.git/blob/master/Problems/Fill_array_problem/FillArrayTest.py) | <code> </code> |
+| [FillArray.py](https://github.com/Alexpascual28/stp_search_tree_algorithms.git/blob/master/Problems/Fill_array_problem/FillArray.py)         | <code> </code> |
 
 </details>
 
@@ -107,8 +107,8 @@ The project includes the following main directories and files:
 
 | File                                                                                                                                                   | Summary                         |
 | ---                                                                                                                                                    | ---                             |
-| [knights_tour.py](https://github.com/Alexpascual28/stp_search_tree_algorithms.git/blob/master/Problems/Knight_problem/knights_tour.py)                 | <code>► INSERT-TEXT-HERE</code> |
-| [knight_search_tester.py](https://github.com/Alexpascual28/stp_search_tree_algorithms.git/blob/master/Problems/Knight_problem/knight_search_tester.py) | <code>► INSERT-TEXT-HERE</code> |
+| [knights_tour.py](https://github.com/Alexpascual28/stp_search_tree_algorithms.git/blob/master/Problems/Knight_problem/knights_tour.py)                 | <code> </code> |
+| [knight_search_tester.py](https://github.com/Alexpascual28/stp_search_tree_algorithms.git/blob/master/Problems/Knight_problem/knight_search_tester.py) | <code> </code> |
 
 </details>
 
@@ -116,8 +116,8 @@ The project includes the following main directories and files:
 
 | File                                                                                                                                  | Summary                         |
 | ---                                                                                                                                   | ---                             |
-| [eight_puzzle.py](https://github.com/Alexpascual28/stp_search_tree_algorithms.git/blob/master/Problems/Eight_problem/eight_puzzle.py) | <code>► INSERT-TEXT-HERE</code> |
-| [eight_tester.py](https://github.com/Alexpascual28/stp_search_tree_algorithms.git/blob/master/Problems/Eight_problem/eight_tester.py) | <code>► INSERT-TEXT-HERE</code> |
+| [eight_puzzle.py](https://github.com/Alexpascual28/stp_search_tree_algorithms.git/blob/master/Problems/Eight_problem/eight_puzzle.py) | <code> </code> |
+| [eight_tester.py](https://github.com/Alexpascual28/stp_search_tree_algorithms.git/blob/master/Problems/Eight_problem/eight_tester.py) | <code> </code> |
 
 </details>
 
@@ -125,9 +125,9 @@ The project includes the following main directories and files:
 
 | File                                                                                                                           | Summary                         |
 | ---                                                                                                                            | ---                             |
-| [tester_outcome.txt](https://github.com/Alexpascual28/stp_search_tree_algorithms.git/blob/master/201255350/tester_outcome.txt) | <code>► INSERT-TEXT-HERE</code> |
-| [queen_cover.py](https://github.com/Alexpascual28/stp_search_tree_algorithms.git/blob/master/201255350/queen_cover.py)         | <code>► INSERT-TEXT-HERE</code> |
-| [qc_tester.py](https://github.com/Alexpascual28/stp_search_tree_algorithms.git/blob/master/201255350/qc_tester.py)             | <code>► INSERT-TEXT-HERE</code> |
+| [tester_outcome.txt](https://github.com/Alexpascual28/stp_search_tree_algorithms.git/blob/master/201255350/tester_outcome.txt) | <code> </code> |
+| [queen_cover.py](https://github.com/Alexpascual28/stp_search_tree_algorithms.git/blob/master/201255350/queen_cover.py)         | <code> </code> |
+| [qc_tester.py](https://github.com/Alexpascual28/stp_search_tree_algorithms.git/blob/master/201255350/qc_tester.py)             | <code> </code> |
 
 </details>
 

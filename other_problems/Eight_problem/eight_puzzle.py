@@ -22,29 +22,6 @@ from copy import deepcopy
 def eight_problem_info():
         print( "The sliding tile 8 puzzle" )
 
-
-### Declarations of some example states
-
-eight_state_0 = [ [1,2,3],  ## 2 moves from goal
-                  [4,0,5],
-                  [7,8,6] ] 
-        
-eight_state_1 = [ [2,0,3],   ## 5 moves from goal
-                  [1,4,6],
-                  [7,5,8] ] 
-
-eight_state_2 = [ [1,5,0],   ## 10 moves from goal
-                  [7,3,2],
-                  [8,4,6]
-                ] 
-
-eight_state_3 = [ [7,1,5],   ## ? moves from goal
-                  [3,4,2],
-                  [8,0,6]
-                ] 
-
-eight_initial_state = eight_state_3
-
 ## Specify the goal state:
 eight_goal_state = [ [1,2,3],
                      [4,5,6],
@@ -139,7 +116,6 @@ def eight_num_diff_tiles_between_states(  s1, s2 ):
                 dist += 1
        return dist
 
-
 def eight_manhatten_heuristic( state ):
         #h = eight_manhatten_dist_between_states( state, eight_goal_state )
         #print( "Manhatten heuristic:", h )
@@ -158,16 +134,14 @@ def eight_manhatten_dist_of_tile_between_states( i, s1, s2 ):
        return (abs(x1-x2) + abs(y1-y2))
 
 
+# Return the problem specification for a given board size
+def make_eight_tile_problem(eight_initial_state):
 
-
-#### Eight Puzzle problem specification
-eight_puzzle = ( None,
-             eight_problem_info,
-             eight_initial_state,
-             eight_possible_actions,
-             eight_successor_state,
-             eight_test_goal_state
-           )
-
-
-
+   #### Eight Puzzle problem specification
+   return ( None,
+            eight_problem_info,
+            eight_initial_state,
+            eight_possible_actions,
+            eight_successor_state,
+            eight_test_goal_state
+            )  

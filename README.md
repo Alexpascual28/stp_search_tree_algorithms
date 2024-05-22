@@ -231,7 +231,7 @@ As explained in the comments in `201255350/queen_cover.py`, the chosen state rep
 # [*,0,*,0]
 ```
 
-**A* Search Tree Algorithm**
+**A-star Search Tree Algorithm**
 
 The A* search algorithm is used to solve the queen coverage problem efficiently. It expands the most promising node first based on a cost function and a heuristic. Here's how it can be used for the queen coverage problem:
 

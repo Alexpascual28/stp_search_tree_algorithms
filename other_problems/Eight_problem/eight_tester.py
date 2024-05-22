@@ -30,4 +30,4 @@ eight_initial_state_3 = [[7,1,5],   ## ? moves from goal
 
 eight_puzzle = make_eight_tile_problem(eight_initial_state_3)
 
-search( eight_puzzle, 'breadth_first', 50000, ['loop_check'] )
+search(eight_puzzle, 'breadth_first', 50000, ['loop_check'] )

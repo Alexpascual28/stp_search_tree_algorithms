@@ -1,0 +1,48 @@
+======= Running Python Queue-Based Search Procedure =======
+===== by: Alejandro Pascual San Roman, SID: 201255350 =====
+
+Queen Domination Problem ( 1 x 1 board):
+What is the minimum number of queens required to control this  1 * 1  board?
+
+Strategy: ('A_star', <function empty_squares_heuristic at 0x00000207D9517550>)
+Search Limit: max_nodes = 5000
+Options: []
+*** starting search ***
+0  
+GOAL STATE:
+  1
+
+The minimum number of queens to cover a  1 * 1  chessboard is equal to the "Path Length" below:
+
+:-)) *SUCCESS* ((-:
+The action path to the solution is:
+(0, 0)
+Path length = 1
+Total nodes tested = 2
+Time taken = 0.0 seconds
+
+======= Running Python Queue-Based Search Procedure =======
+===== by: Alejandro Pascual San Roman, SID: 201255350 =====
+
+Queen Domination Problem ( 3 x 3 board):
+What is the minimum number of queens required to control this  3 * 3  board?
+
+Strategy: ('A_star', <function empty_squares_heuristic at 0x00000207D9517550>)
+Search Limit: max_nodes = 5000
+Options: []
+*** starting search ***
+0  
+GOAL STATE:
+  0  0  0
+  0  1  0
+  0  0  0
+
+The minimum number of queens to cover a  3 * 3  chessboard is equal to the "Path Length" below:
+
+:-)) *SUCCESS* ((-:
+The action path to the solution is:
+(1, 1)
+Path length = 1
+Total nodes tested = 2
+Time taken = 0.0 seconds
+

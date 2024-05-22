@@ -10,7 +10,7 @@ from random import *  # Used for randomised depth first search
 import time  # Used to determine time taken to solve problem
 import sys  # Used to flush the output buffer
 
-from tree import *  # Defines tree data structure
+from solver.tree import *  # Defines tree data structure
 
 print("Loading queue_search.py")
 

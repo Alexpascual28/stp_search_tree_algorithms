@@ -25,6 +25,3 @@ from knights_tour  import *
 
 search(get_knights_tour_problem(3,4), 'depth_first',   500000, [] )
 search(get_knights_tour_problem(5,5), 'depth_first',   500000, ['loop_check'] )
-
-
-

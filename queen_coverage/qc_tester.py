@@ -17,7 +17,7 @@ original = sys.stdout
 sys.stdout = open('queen_coverage/tester_outcome.txt', 'w')
 
 search(make_qc_problem(1,1), ('A_star', empty_squares_heuristic), 5000, [])
-search(make_qc_problem(3,3), ('A_star', zero_heuristic), 5000, [])
+search(make_qc_problem(3,3), ('A_star', empty_squares_heuristic), 5000, [])
 search(make_qc_problem(4,4), ('A_star', empty_squares_heuristic), 5000, [])
 search(make_qc_problem(5,5), ('A_star', empty_squares_heuristic), 5000, [])
 

@@ -4,7 +4,7 @@
 Queen Domination Problem ( 1 x 1 board):
 What is the minimum number of queens required to control this  1 * 1  board?
 
-Strategy: ('A_star', <function empty_squares_heuristic at 0x000001C49151EB80>)
+Strategy: ('A_star', <function empty_squares_heuristic at 0x000001CD2A928B80>)
 Search Limit: max_nodes = 5000
 Options: []
 *** starting search ***
@@ -27,7 +27,7 @@ Time taken = 0.0 seconds
 Queen Domination Problem ( 3 x 3 board):
 What is the minimum number of queens required to control this  3 * 3  board?
 
-Strategy: ('A_star', <function zero_heuristic at 0x000001C49151EC10>)
+Strategy: ('A_star', <function empty_squares_heuristic at 0x000001CD2A928B80>)
 Search Limit: max_nodes = 5000
 Options: []
 *** starting search ***
@@ -43,7 +43,7 @@ The minimum number of queens to cover a  3 * 3  chessboard is equal to the "Path
 The action path to the solution is:
 (1, 1)
 Path length = 1
-Total nodes tested = 6
+Total nodes tested = 2
 Time taken = 0.0 seconds
 
 ======= Running Python Queue-Based Search Procedure =======
@@ -52,7 +52,7 @@ Time taken = 0.0 seconds
 Queen Domination Problem ( 4 x 4 board):
 What is the minimum number of queens required to control this  4 * 4  board?
 
-Strategy: ('A_star', <function empty_squares_heuristic at 0x000001C49151EB80>)
+Strategy: ('A_star', <function empty_squares_heuristic at 0x000001CD2A928B80>)
 Search Limit: max_nodes = 5000
 Options: []
 *** starting search ***
@@ -78,7 +78,7 @@ Time taken = 0.0 seconds
 Queen Domination Problem ( 5 x 5 board):
 What is the minimum number of queens required to control this  5 * 5  board?
 
-Strategy: ('A_star', <function empty_squares_heuristic at 0x000001C49151EB80>)
+Strategy: ('A_star', <function empty_squares_heuristic at 0x000001CD2A928B80>)
 Search Limit: max_nodes = 5000
 Options: []
 *** starting search ***
@@ -105,7 +105,7 @@ Time taken = 0.0 seconds
 Queen Domination Problem ( 5 x 6 board):
 What is the minimum number of queens required to control this  5 * 6  board?
 
-Strategy: ('A_star', <function empty_squares_heuristic at 0x000001C49151EB80>)
+Strategy: ('A_star', <function empty_squares_heuristic at 0x000001CD2A928B80>)
 Search Limit: max_nodes = 5000
 Options: []
 *** starting search ***
@@ -125,7 +125,7 @@ The action path to the solution is:
 (2, 3), (4, 0), (1, 3)
 Path length = 3
 Total nodes tested = 4
-Time taken = 0.015625 seconds
+Time taken = 0.0 seconds
 
 ======= Running Python Queue-Based Search Procedure =======
 ===== by: Alejandro Pascual San Roman, SID: 201255350 =====
@@ -133,7 +133,7 @@ Time taken = 0.015625 seconds
 Queen Domination Problem ( 6 x 5 board):
 What is the minimum number of queens required to control this  6 * 5  board?
 
-Strategy: ('A_star', <function empty_squares_heuristic at 0x000001C49151EB80>)
+Strategy: ('A_star', <function empty_squares_heuristic at 0x000001CD2A928B80>)
 Search Limit: max_nodes = 5000
 Options: []
 *** starting search ***
@@ -160,7 +160,7 @@ Time taken = 0.0 seconds
 Queen Domination Problem ( 10 x 3 board):
 What is the minimum number of queens required to control this  10 * 3  board?
 
-Strategy: ('A_star', <function zero_heuristic at 0x000001C49151EC10>)
+Strategy: ('A_star', <function zero_heuristic at 0x000001CD2A928C10>)
 Search Limit: max_nodes = 5000
 Options: []
 *** starting search ***
@@ -177,7 +177,7 @@ The action path to the solution is:
 (9, 2), (0, 0), (9, 1)
 Path length = 3
 Total nodes tested = 902
-Time taken = 3.03125 seconds
+Time taken = 1.96875 seconds
 
 ======= Running Python Queue-Based Search Procedure =======
 ===== by: Alejandro Pascual San Roman, SID: 201255350 =====
@@ -185,7 +185,7 @@ Time taken = 3.03125 seconds
 Queen Domination Problem ( 3 x 4 board):
 What is the minimum number of queens required to control this  3 * 4  board?
 
-Strategy: ('A_star', <function empty_squares_heuristic at 0x000001C49151EB80>)
+Strategy: ('A_star', <function empty_squares_heuristic at 0x000001CD2A928B80>)
 Search Limit: max_nodes = 5000
 Options: []
 *** starting search ***
@@ -211,7 +211,7 @@ Time taken = 0.0 seconds
 Queen Domination Problem ( 4 x 7 board):
 What is the minimum number of queens required to control this  4 * 7  board?
 
-Strategy: ('A_star', <function empty_squares_heuristic at 0x000001C49151EB80>)
+Strategy: ('A_star', <function empty_squares_heuristic at 0x000001CD2A928B80>)
 Search Limit: max_nodes = 5000
 Options: []
 *** starting search ***
@@ -240,7 +240,7 @@ Time taken = 0.0 seconds
 Queen Domination Problem ( 2 x 50 board):
 What is the minimum number of queens required to control this  2 * 50  board?
 
-Strategy: ('A_star', <function empty_squares_heuristic at 0x000001C49151EB80>)
+Strategy: ('A_star', <function empty_squares_heuristic at 0x000001CD2A928B80>)
 Search Limit: max_nodes = 5000
 Options: []
 *** starting search ***
@@ -304,5 +304,5 @@ The action path to the solution is:
 (1, 48), (0, 49)
 Path length = 2
 Total nodes tested = 3
-Time taken = 0.03125 seconds
+Time taken = 0.015625 seconds
 

@@ -1,26 +1,37 @@
-from copy import deepcopy
+# maze_problem.py
+# by Alejandro Pascual San Roman (bdh532)
+# University of York
+
+# Definition of Maze Path Planning search problem
+# In a maze path planning problem, the goal is to find a path from the initial square to the goal square
+# avoiding the walls and visiting each square only once
+
+# The maze is represented as a 2D array of integers, where:
 
 # Representation of a state:
-# (move_number, list_controlled_squares, (current_x_pos, current_y_pos),  full_board_state)
-# So on a 4x4 board after placing two queens we might have a state such as:
-#
-# (13, [(0, 0), (1, 0), (2, 0), (3, 0),
-#       (0, 1), (1, 1), (2, 1), (3, 1),
-#       (0, 2), (1, 2), (2, 2),
-#       (0, 3)          (2, 3)          ], (1,0), [[0,0,1,0],
-#                                                  [1,0,0,0],
-#                                                  [0,0,0,0],
-#                                                  [0,0,0,0]] )
-#
-# Since the queens are controlling 13 squares (the ones marked with an asterisk as follows):
-#
-# [*,*,*,*],
-# [*,*,*,*],
-# [*,*,*,0],
-# [*,0,*,0]
+# (move_number, (current_x_pos, current_y_pos), full_board_state)
+# Example:
+# (4, (1, 6), [[-2, -2, -2, -1, -2, -2, -2, -2, -2, -2],
+#              [-2,  0,  0,  1,  2,  3,  4,  0,  0, -2],
+#              [-2, -2, -2, -2, -2, -2, -2, -2,  0, -2],
+#              [-2,  0, -2,  0,  0,  0,  0, -2,  0, -2],
+#              [-2,  0, -2,  0, -2, -2,  0, -2,  0, -2],
+#              [-2,  0,  0,  0,  0, -2,  0, -2,  0, -2],
+#              [-2, -2, -2, -2,  0, -2,  0, -2,  0, -2],
+#              [-2,  0,  0,  0,  0, -2,  0,  0,  0, -2],
+#              [-2, -3, -2, -2, -2, -2, -2, -2, -2, -2]], )
+#  
+# -2: wall
+# -1: initial square
+#  0: unvisited square
+# -3: goal square
+#  1+: visited square, in order of visitation
+
+from copy import deepcopy
 
 def maze_problem_info():
-    pass
+    print("\nMaze Path Planning Problem.")
+    print("Solves the given maze.\n")
 
 def get_initial_state(maze_initial_state):
     initial_position = find_initial_position(maze_initial_state)
@@ -34,24 +45,57 @@ def find_initial_position(maze_initial_state):
 
 def possible_actions(state):
     surrounding_squares = get_surrounding_squares(state[1])
-
-    if state[0] == 0:
-        return knight_initial_moves()
-    return knight_following_moves(state)
+    return [square for square in surrounding_squares if state[2][square[0]][square[1]] == 0 or state[2][square[0]][square[1]] == -3] # Can only move to unvisited squares or the goal square
 
 def get_surrounding_squares(position):
     x, y = position
 
-    for x, y in [(x-1, y), (x+1, y), (x, y-1), (x, y+1)]:
+    for x, y in [(x-1, y-1), (x, y-1), (x+1, y-1), (x-1, y), (x+1, y), (x-1, y+1), (x, y+1), (x+1, y+1)]:
         if x >= 0 and y >= 0:
             yield x, y
 
 def successor_state(action, state):
     # Returns new state after applying action
-    pass
+    board = deepcopy(state[2])
+    x_position = action[0]
+    y_position = action[1]
+
+    if board[x_position][y_position] == -3:
+        move_number = -3
+    else:
+        move_number = state[0] + 1
+
+    # Mark the square as visited
+    board[x_position][y_position] = move_number
+
+    return move_number, (x_position, y_position), board
 
 def is_goal_state(state):
-    return state == (9, 9)  # Goal is bottom-right corner
+    if state[0] == -3:
+        print("\nGOAL STATE:")
+        print_board_state(state)
+        return True
+    return False
+    
+def print_board_state(state):
+    board = state[2]
+    for row in board:
+        for square in row:
+            print(" %2i" % square, end='')
+        print()
+
+def distance_to_end_heuristic(state):
+    goal_position = find_goal(state[2])
+    current_position = state[1]
+
+    # Euclidean distance
+    return ((goal_position[0] - current_position[0])**2 + (goal_position[1] - current_position[1])**2)**0.5
+
+def find_goal(maze):
+    for i in range(len(maze)):
+        for j in range(len(maze[i])):
+            if maze[i][j] == -3:
+                return i, j
 
 # Return the problem specification for a given maze
 def create_maze_problem(maze_initial_state):

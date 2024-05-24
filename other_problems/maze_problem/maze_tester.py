@@ -1,3 +1,9 @@
+# maze_tester.py
+# by Alejandro Pascual San Roman (bdh532)
+# University of York
+
+# Tester for the maze path planning problem.
+
 import sys
 import os
 

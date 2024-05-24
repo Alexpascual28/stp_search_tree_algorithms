@@ -84,6 +84,8 @@ def print_board_state(state):
             print(" %2i" % square, end='')
         print()
 
+# HEURISTICS
+
 def distance_to_end_heuristic(state):
     goal_position = find_goal(state[2])
     current_position = state[1]
@@ -96,6 +98,11 @@ def find_goal(maze):
         for j in range(len(maze[i])):
             if maze[i][j] == -3:
                 return i, j
+
+def zero_heuristic(state):
+    return 0
+
+# CREATE MAZE PROBLEM
 
 # Return the problem specification for a given maze
 def create_maze_problem(maze_initial_state):

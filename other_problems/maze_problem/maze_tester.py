@@ -33,7 +33,7 @@ sys.path.insert(0, file_path)
 from solver.tree          import *
 from solver.queue_search  import *
 
-from maze_problem  import *
+from maze_problem import *
 
 from sample_mazes import *
 
@@ -55,8 +55,8 @@ def create_random_maze(x, y, wall_density):
 
 maze_puzzle_1 = create_maze_problem(maze_initial_state_empty)
 
-random_maze = create_random_maze(10, 15, 50)
-random_maze_problem = create_maze_problem(random_maze)
+# random_maze = create_random_maze(10, 15, 50)
+# random_maze_problem = create_maze_problem(random_maze)
 
-search(maze_puzzle_1, ('A_star', distance_to_end_heuristic), 5000, [])
-search(random_maze_problem, ('A_star', distance_to_end_heuristic), 5000, [])
+search(maze_puzzle_1, ('A_star', distance_to_end_heuristic), 100000, [])
+# search(random_maze_problem, ('A_star', distance_to_end_heuristic), 5000, [])

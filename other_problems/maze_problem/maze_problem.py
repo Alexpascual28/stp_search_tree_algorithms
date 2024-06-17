@@ -33,9 +33,15 @@ def maze_problem_info():
     print("\nMaze Path Planning Problem.")
     print("Solves the given maze.\n")
 
-def get_initial_state(maze_initial_state):
-    initial_position = find_initial_position(maze_initial_state)
-    return 0, initial_position, maze_initial_state # Starting at the top-left corner
+def initialise_maze(maze_initial_state):
+    global BOARD_X, BOARD_Y, INITIAL_POSITION, MAZE_INITIAL_STATE
+    BOARD_X = len(maze_initial_state)
+    BOARD_Y = len(maze_initial_state[0])
+    INITIAL_POSITION = find_initial_position(maze_initial_state)
+    MAZE_INITIAL_STATE = maze_initial_state
+
+def get_initial_state():
+    return 0, INITIAL_POSITION, MAZE_INITIAL_STATE # Starting at the top-left corner
 
 def find_initial_position(maze_initial_state):
     for i in range(len(maze_initial_state)):
@@ -50,9 +56,11 @@ def possible_actions(state):
 def get_surrounding_squares(position):
     x, y = position
 
-    for x, y in [(x-1, y-1), (x, y-1), (x+1, y-1), (x-1, y), (x+1, y), (x-1, y+1), (x, y+1), (x+1, y+1)]:
-        if x >= 0 and y >= 0:
-            yield x, y
+    print(x, y)
+
+    for i, j in [(x-1, y-1), (x, y-1), (x+1, y-1), (x-1, y), (x+1, y), (x-1, y+1), (x, y+1), (x+1, y+1)]:
+        if (i >= 0 and i < BOARD_X) and (j >= 0 and j < BOARD_Y):
+            yield i, j
 
 def successor_state(action, state):
     # Returns new state after applying action
@@ -106,9 +114,9 @@ def zero_heuristic(state):
 
 # Return the problem specification for a given maze
 def create_maze_problem(maze_initial_state):
-    return (None,
+    return (initialise_maze(maze_initial_state),
             maze_problem_info,
-            get_initial_state(maze_initial_state),
+            get_initial_state(),
             possible_actions,
             successor_state,
             is_goal_state)

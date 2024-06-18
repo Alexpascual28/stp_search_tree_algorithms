@@ -110,6 +110,11 @@ def find_goal(maze):
 def zero_heuristic(state):
     return 0
 
+# COST FUNCTION
+
+def distance_travelled_cost(node):
+    pass
+
 # CREATE MAZE PROBLEM
 
 # Return the problem specification for a given maze

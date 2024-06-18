@@ -53,7 +53,7 @@ def create_random_maze(x, y, wall_density):
 
     return maze
 
-maze_puzzle_1 = create_maze_problem(maze_initial_state_empty)
+maze_puzzle_1 = create_maze_problem(maze_initial_state_3)
 
 # random_maze = create_random_maze(10, 15, 50)
 # random_maze_problem = create_maze_problem(random_maze)

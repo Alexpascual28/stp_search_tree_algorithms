@@ -50,15 +50,17 @@ def find_initial_position(maze_initial_state):
                 return i, j
 
 def possible_actions(state):
-    surrounding_squares = get_surrounding_squares(state[1])
+    surrounding_squares = get_surrounding_squares(state[1], SCAN_DIAGONALS)
     return [square for square in surrounding_squares if state[2][square[0]][square[1]] == 0 or state[2][square[0]][square[1]] == -3] # Can only move to unvisited squares or the goal square
 
-def get_surrounding_squares(position):
+def get_surrounding_squares(position, scan_diagonals):
     x, y = position
 
-    print(x, y)
+    squares_to_scan = [(x-1, y-1), (x, y-1), (x+1, y-1), (x-1, y), (x+1, y), (x-1, y+1), (x, y+1), (x+1, y+1)] if scan_diagonals else [(x, y-1), (x-1, y), (x+1, y), (x, y+1)]
 
-    for i, j in [(x-1, y-1), (x, y-1), (x+1, y-1), (x-1, y), (x+1, y), (x-1, y+1), (x, y+1), (x+1, y+1)]:
+    # print(x, y)
+
+    for i, j in squares_to_scan:
         if (i >= 0 and i < BOARD_X) and (j >= 0 and j < BOARD_Y):
             yield i, j
 
@@ -125,7 +127,9 @@ def distance_travelled_cost(node):
 # CREATE MAZE PROBLEM
 
 # Return the problem specification for a given maze
-def create_maze_problem(maze_initial_state):
+def create_maze_problem(maze_initial_state, scan_diagonals=True):
+    global SCAN_DIAGONALS
+    SCAN_DIAGONALS = scan_diagonals
     return (initialise_maze(maze_initial_state),
             maze_problem_info,
             get_initial_state(),

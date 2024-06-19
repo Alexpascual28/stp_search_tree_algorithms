@@ -53,12 +53,15 @@ def create_random_maze(x, y, wall_density):
 
     return maze
 
-maze_puzzle_a_star = create_maze_problem(maze_initial_state_3, scan_diagonals=False)
-search(maze_puzzle_a_star, ('A_star', distance_to_end_heuristic, avoid_turns_cost_function), 500000, ['loop_check'])
-search(maze_puzzle_a_star, ('A_star', distance_to_end_heuristic), 500000, ['loop_check'])
+narrow_pathway_maze_puzzle = create_maze_problem(maze_initial_state_3, scan_diagonals=False)
+search(narrow_pathway_maze_puzzle, ('A_star', distance_to_end_heuristic), 500000, ['loop_check'])
 
-maze_puzzle_best_first = create_maze_problem(maze_initial_state_2, scan_diagonals=False)
-search(maze_puzzle_best_first, ('best_first', distance_to_end_heuristic), 500000, ['loop_check'])
+middle_barrier_puzzle = create_maze_problem(maze_initial_state_4, scan_diagonals=False)
+search(middle_barrier_puzzle, ('A_star', distance_to_end_heuristic, avoid_turns_cost_function), 500000, ['loop_check'])
+search(middle_barrier_puzzle, ('best_first', distance_to_end_heuristic), 500000, ['loop_check'])
+
+wide_pathway_maze_puzzle = create_maze_problem(maze_initial_state_2, scan_diagonals=False)
+search(wide_pathway_maze_puzzle, ('best_first', distance_to_end_heuristic), 500000, ['loop_check'])
 
 random_maze = create_random_maze(10, 15, 40)
 random_maze_problem = create_maze_problem(random_maze, scan_diagonals=True)

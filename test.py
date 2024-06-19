@@ -53,4 +53,4 @@ def print_board_state(board):
                 print("%4i" % square, end='')
         print()
 
-print_board_state(test_maze)
+print_board_state(sample_mazes.yora_maze)

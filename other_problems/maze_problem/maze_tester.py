@@ -24,7 +24,6 @@
 
 import sys
 import os
-import random
 
 # Since the queue and tree solver modules are in a different directory, we need to add the path to the system path
 file_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '../..'))
@@ -34,34 +33,22 @@ from solver.tree          import *
 from solver.queue_search  import *
 
 from maze_problem import *
-
 from sample_mazes import *
 
-random = Random()
-
-def create_random_maze(x, y, wall_density):
-
-    maze = [[0 for _ in range(x)] for _ in range(y)]
-
-    for i in range(y):
-        for j in range(x):
-            if int(random.random()*100) < wall_density:
-                maze[i][j] = -2
-
-    maze[random.randint(0, y-1)][random.randint(0, x-1)] = -1
-    maze[random.randint(0, y-1)][random.randint(0, x-1)] = -3
-
-    return maze
-
 narrow_pathway_maze_puzzle = create_maze_problem(maze_initial_state_3, scan_diagonals=False)
-search(narrow_pathway_maze_puzzle, ('A_star', distance_to_end_heuristic), 500000, ['loop_check'])
+search(narrow_pathway_maze_puzzle, ('A_star', distance_to_end_heuristic), 5000, ['loop_check'])
+
+middle_barrier_diagonals_puzzle = create_maze_problem(maze_initial_state_4, scan_diagonals=True)
+search(middle_barrier_diagonals_puzzle, ('A_star', distance_to_end_heuristic, avoid_turns_cost_function), 6000, ['loop_check'])
 
 middle_barrier_puzzle = create_maze_problem(maze_initial_state_4, scan_diagonals=False)
-search(middle_barrier_puzzle, ('A_star', distance_to_end_heuristic, avoid_turns_cost_function), 500000, ['loop_check'])
-search(middle_barrier_puzzle, ('best_first', distance_to_end_heuristic), 500000, ['loop_check'])
+search(middle_barrier_puzzle, ('best_first', distance_to_end_heuristic), 10000, ['loop_check'])
 
 wide_pathway_maze_puzzle = create_maze_problem(maze_initial_state_2, scan_diagonals=False)
-search(wide_pathway_maze_puzzle, ('best_first', distance_to_end_heuristic), 500000, ['loop_check'])
+search(wide_pathway_maze_puzzle, ('best_first', distance_to_end_heuristic), 100000, ['loop_check'])
+
+# wide_pathway_maze_diagonals_puzzle = create_maze_problem(maze_initial_state_2, scan_diagonals=True)
+# search(wide_pathway_maze_diagonals_puzzle, ('A_star', distance_to_end_heuristic, avoid_turns_cost_function), 500000, ['loop_check'])
 
 random_maze = create_random_maze(10, 15, 40)
 random_maze_problem = create_maze_problem(random_maze, scan_diagonals=True)

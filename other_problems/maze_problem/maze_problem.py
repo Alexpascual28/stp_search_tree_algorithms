@@ -89,7 +89,14 @@ def print_board_state(state):
     board = state[2]
     for row in board:
         for square in row:
-            print(" %2i" % square, end='')
+            if square == -2:
+                print("%4s" % "████", end='')
+            elif square == -1:
+                print("%4s" % "[S]", end='')
+            elif square == -3:
+                print("%4s" % "[G]", end='')
+            else:
+                print("%4i" % square, end='')
         print()
 
 # HEURISTICS

@@ -58,5 +58,5 @@ maze_puzzle_1 = create_maze_problem(maze_initial_state_3)
 # random_maze = create_random_maze(10, 15, 50)
 # random_maze_problem = create_maze_problem(random_maze)
 
-search(maze_puzzle_1, ('A_star', distance_to_end_heuristic), 100000, ['loop_check'])
+search(maze_puzzle_1, ('best_first', distance_to_end_heuristic), 1000000, ['loop_check'])
 # search(random_maze_problem, ('A_star', distance_to_end_heuristic), 5000, [])

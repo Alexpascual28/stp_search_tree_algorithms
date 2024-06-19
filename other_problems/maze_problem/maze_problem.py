@@ -121,8 +121,32 @@ def zero_heuristic(state):
 
 # COST FUNCTION
 
-def distance_travelled_cost(node):
-    pass
+# Each node takes the form:
+# [parent_node, list_of_child_nodes, [action_path, state, cost, heuristic_value]]
+# Representation of a state:
+# (move_number, (current_x_pos, current_y_pos), current_full_board)
+
+def avoid_turns_cost_function(node):
+    """
+    Calculates the cost of a node based on the number of turns in the path.
+
+    Parameters:
+    - node: The node to calculate the cost for.
+
+    Returns:
+    - The cost of the node.
+    """
+    path = node[2][0]  # Get the action path from the node
+    cost = 0  # Initialize the cost to 0
+
+    # Iterate through the path starting from the second position
+    for i in range(1, len(path)):
+        if i >= 2:
+            # Check if the current position and the previous two positions form a straight line
+            if not (path[i][0] - path[i-1][0] == path[i-1][0] - path[i-2][0] and path[i][1] - path[i-1][1] == path[i-1][1] - path[i-2][1]):
+                cost += 1  # Increment the cost by 1 for each turn
+
+    return cost
 
 # CREATE MAZE PROBLEM
 

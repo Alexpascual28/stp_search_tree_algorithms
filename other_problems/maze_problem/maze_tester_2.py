@@ -86,7 +86,7 @@ yora_maze_empty = [[-2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, 
 
                    [-2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2],]
 
-search(create_maze_problem(yora_maze, scan_diagonals=True), ('A_star', distance_to_end_heuristic, avoid_turns_cost_function), 500000, [])
+search(create_maze_problem(yora_maze_1, scan_diagonals=False), ('A_star', distance_to_end_heuristic, avoid_turns_cost_function), 500000, [])
 
 # search(create_maze_problem(yora_maze, scan_diagonals=False), ('A_star', distance_to_end_heuristic, avoid_turns_cost_function), 500000, []) # Takes 248 seconds to solve, 58635 nodes expanded
 # search(create_maze_problem(yora_maze, scan_diagonals=True), ('A_star', distance_to_end_heuristic, avoid_turns_cost_function), 500000, []) # Takes too long to solve

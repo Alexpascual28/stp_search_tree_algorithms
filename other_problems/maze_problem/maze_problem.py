@@ -83,7 +83,7 @@ def successor_state(action, state):
 def is_goal_state(state):
     if state[0] == -3:
         print("\nGOAL STATE:")
-        print_board_state(state)
+        print_board_state(state) if PRINT_GOAL_STATE else None
         return True
     return False
     
@@ -151,9 +151,10 @@ def avoid_turns_cost_function(node):
 # CREATE MAZE PROBLEM
 
 # Return the problem specification for a given maze
-def create_maze_problem(maze_initial_state, scan_diagonals=True):
-    global SCAN_DIAGONALS
+def create_maze_problem(maze_initial_state, scan_diagonals=True, print_goal_state=True):
+    global SCAN_DIAGONALS, PRINT_GOAL_STATE
     SCAN_DIAGONALS = scan_diagonals
+    PRINT_GOAL_STATE = print_goal_state
     return (initialise_maze(maze_initial_state),
             maze_problem_info,
             get_initial_state(),

@@ -9,6 +9,7 @@ from solver.tree          import *
 from solver.queue_search  import *
 
 from maze_problem import *
+from sample_mazes import *
 
 yora_maze_1 = [[-2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2],
                [-2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2],
@@ -86,11 +87,17 @@ yora_maze_empty = [[-2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, 
 
                    [-2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2],]
 
-def blind_informed_search(actual_maze, initial_known_maze, scan_diagonals=True, strategy=('A_star', distance_to_end_heuristic, avoid_turns_cost_function)):
+def blind_informed_search(actual_maze, initial_known_maze, strategy=('A_star', distance_to_end_heuristic, avoid_turns_cost_function), scan_diagonals=False, print_goal_states=False):
     # Check if the actual and initial mazes are the same size
     if are_mazes_equal_size(actual_maze, initial_known_maze) == False:
         raise Exception("Actual and initial mazes are different sizes. The initial unknown maze should be the same size as the actual maze.")
     
+    print("Starting blind informed search...")
+    print("\nThe actual maze is:")
+    print_maze(actual_maze)
+    print("\nThe initial known maze is:")
+    print_maze(initial_known_maze)
+
     # Current known maze
     known_maze = deepcopy(initial_known_maze)
 
@@ -102,15 +109,17 @@ def blind_informed_search(actual_maze, initial_known_maze, scan_diagonals=True, 
     final_known_maze[goal_position[0]][goal_position[1]] = -3
 
     is_goal_reached = False
+    move_number = 0
+
     while(is_goal_reached == False):
         # Find the path to the goal
-        path = search(create_maze_problem(known_maze, scan_diagonals), strategy, 500000, [])
+        path = search(create_maze_problem(known_maze, scan_diagonals, print_goal_states), strategy, 500000, [])
 
         # Follow the path to the goal and re-assign the known maze
         is_goal_reached, visited_path, known_maze = follow_path(actual_maze, known_maze, path)
 
         # Draw path in the final known maze
-        final_known_maze = draw_path(final_known_maze, visited_path)
+        final_known_maze, move_number = draw_path(final_known_maze, visited_path, move_number)
 
     # Print the final known maze
     print("Goal reached! The final known maze is:")
@@ -151,10 +160,12 @@ def delete_start_point(maze):
                 maze[i][j] = 0
                 return maze
 
-def draw_path(maze, path):
+def draw_path(maze, path, last_move_number):
+    move_number = last_move_number
     for i in range(len(path)):
-        maze[path[i][0]][path[i][1]] = i + 1
-    return maze
+        move_number = last_move_number + i + 1
+        maze[path[i][0]][path[i][1]] = move_number
+    return maze, move_number
 
 def find_position_by_value(maze, value):
     for i in range(len(maze)):
@@ -175,4 +186,5 @@ def print_maze(maze):
                 print("%4i" % square, end='')
         print()
 
-blind_informed_search(yora_maze_1, yora_maze_empty, scan_diagonals=False, strategy=('A_star', distance_to_end_heuristic, avoid_turns_cost_function))
+blind_informed_search(yora_maze_1, yora_maze_empty)
+# blind_informed_search(maze_initial_state_2, maze_initial_state_empty)

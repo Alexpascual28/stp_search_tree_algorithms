@@ -130,5 +130,7 @@ def add_obstacle_margins(maze, margin):
 
 # print_maze(add_obstacle_margins(yora_maze_1, 1))
 
-blind_informed_search(yora_maze_1, yora_maze_empty, strategy=('A_star', distance_to_end_heuristic, avoid_turns_cost_function), print_goal_states=True, margins=2)
-# blind_informed_search(maze_initial_state_2, maze_initial_state_empty)
+blind_informed_search(yora_maze_1, yora_maze_empty, strategy=('A_star', distance_to_end_heuristic, avoid_turns_cost_function), margins=2)
+# blind_informed_search(yora_maze_1, yora_maze_empty, strategy=('A_star', distance_to_end_heuristic, avoid_turns_cost_function), scan_diagonals=True, print_goal_states=True, margins=2)
+
+blind_informed_search(maze_initial_state_2, maze_initial_state_empty)

@@ -82,8 +82,9 @@ def successor_state(action, state):
 
 def is_goal_state(state):
     if state[0] == -3:
-        print("\nGOAL STATE:")
-        print_board_state(state) if PRINT_GOAL_STATE else None
+        if PRINT_GOAL_STATE:
+            print("\nGOAL STATE:")
+            print_board_state(state)
         return True
     return False
     

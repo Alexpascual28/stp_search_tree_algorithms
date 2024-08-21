@@ -11,16 +11,33 @@ from solver.queue_search  import *
 from maze_problem import *
 from sample_mazes import *
 
-def blind_informed_search(actual_maze, initial_known_maze, strategy=('A_star', distance_to_end_heuristic, avoid_turns_cost_function), scan_diagonals=False, print_goal_states=False, margins=0):
+def blind_informed_search(actual_maze, initial_known_maze,
+                          scan_diagonals=False, print_goal_states=False, change_scanning_strategy=False, max_node_increment=2000, margins=0,
+                          strategy=('A_star', distance_to_end_heuristic, avoid_turns_cost_function), max_nodes=500000,
+                          options=['loop_check', 'print_loops', 'hide_debug_info']):
+    
     # Check if the actual and initial mazes are the same size
     if are_mazes_equal_size(actual_maze, initial_known_maze) == False:
         raise Exception("Actual and initial mazes are different sizes. The initial unknown maze should be the same size as the actual maze.")
     
+    print("\n\n======= Running Blind Informed Queue-Based Search Procedure for Path Planning =======")
+    print("===== by: Alejandro Pascual San Roman, ID: bdh532 =====")
+    
+    # Print algorithm data
     print("Starting blind informed search...")
     print("\nThe actual maze is:")
     print_maze(actual_maze)
     print("\nThe initial known maze is:")
     print_maze(initial_known_maze)
+
+    print("Strategy:", strategy)
+    print("Search Limit per Iteration: max_nodes =", max_nodes)
+    print("Options:", options)
+    print("*** starting search ***\n")
+
+    # Flag to switch scanning strategy back to the original one if scanning strategy was changed
+    if change_scanning_strategy:
+        switch_scanning_strategy_back = False
 
     # Add margins to the actual maze
     actual_maze_with_margins = add_obstacle_margins(deepcopy(actual_maze), margins)
@@ -37,10 +54,41 @@ def blind_informed_search(actual_maze, initial_known_maze, strategy=('A_star', d
 
     is_goal_reached = False
     move_number = 0
+    current_max_nodes = max_nodes
 
     while(is_goal_reached == False):
         # Find the path to the goal
-        path = search(create_maze_problem(known_maze, scan_diagonals, print_goal_states), strategy, 500000, [])
+        path = search(create_maze_problem(known_maze, scan_diagonals, print_goal_states), strategy, current_max_nodes, options)
+
+        if change_scanning_strategy:
+            # If scanning strategy was switched, switch it back to the original
+            if switch_scanning_strategy_back == True:
+                print("\n\nSwitching scanning strategy back to the original...")
+                scan_diagonals = not scan_diagonals
+                print('New scanning strategy. Scan diagonals:', scan_diagonals, '\n')
+                switch_scanning_strategy_back = False
+
+                # If no path was found after switching scanning strategy, adjust the maximum number of nodes allowed
+                if path == -2:
+                    print("No path found after switching scanning strategy. Adjusting maximum nodes...")
+                    current_max_nodes += max_node_increment
+                    print("New maximum nodes:", current_max_nodes, '\n')
+                    continue
+
+            # If no path was found, switch scanning strategy and try again
+            if path == -2:
+                print("\nNo path found. Changing scanning strategy...")
+                scan_diagonals = not scan_diagonals
+                print('New scanning strategy. Scan diagonals:', scan_diagonals, '\n')
+                switch_scanning_strategy_back = True
+                #switch_counter += 1
+                continue
+
+        if path == -1 or path == -2:
+            print("\nNo path found. Exiting...")
+            return
+        
+        current_max_nodes = max_nodes
 
         # Follow the path to the goal and re-assign the known maze
         is_goal_reached, visited_path, known_maze = follow_path(actual_maze_with_margins, known_maze, path)
@@ -49,7 +97,7 @@ def blind_informed_search(actual_maze, initial_known_maze, strategy=('A_star', d
         final_known_maze, move_number = draw_path(final_known_maze, visited_path, move_number)
 
     # Print the final known maze
-    print("Goal reached! The final known maze is:")
+    print("\n\nGoal reached! The final known maze is:")
     print_maze(final_known_maze)
     
 def are_mazes_equal_size(actual_maze, initial_known_maze):
@@ -130,7 +178,8 @@ def add_obstacle_margins(maze, margin):
 
 # print_maze(add_obstacle_margins(yora_maze_1, 1))
 
-blind_informed_search(yora_maze_1, yora_maze_empty, strategy=('A_star', distance_to_end_heuristic, avoid_turns_cost_function), margins=2)
-# blind_informed_search(yora_maze_1, yora_maze_empty, strategy=('A_star', distance_to_end_heuristic, avoid_turns_cost_function), scan_diagonals=True, print_goal_states=True, margins=2)
+blind_informed_search(yora_maze_1, yora_maze_empty, margins=2, scan_diagonals=True, print_goal_states=False, change_scanning_strategy=True,
+                      strategy=('A_star', distance_to_end_heuristic, avoid_turns_cost_function), max_nodes=2000,)
 
-blind_informed_search(maze_initial_state_2, maze_initial_state_empty)
+# blind_informed_search(yora_maze_1, yora_maze_empty, strategy=('A_star', distance_to_end_heuristic, avoid_turns_cost_function), scan_diagonals=True, print_goal_states=True, margins=2)
+# blind_informed_search(maze_initial_state_2, maze_initial_state_empty)

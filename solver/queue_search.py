@@ -47,12 +47,15 @@ print("Loading queue_search.py")
 # 'loop_check'  --- check if node already generated and if so discard it
 # 'print_loops' --- print indication when a loop is detected (only useful with 'loop_check')
 # 'print_ties' --- print indication when a new node ties in cost/heuristic with an existing node.
+# 'show_expand' --- print out the state of the node being expanded
+# 'hide_debug_info' --- hide printed out debug info
 
 
 # Main function (used by user)
 def search(problem, strategy, max_nodes, options):
-    print("======= Running Python Queue-Based Search Procedure =======")
-    print("===== by: Alejandro Pascual San Roman, SID: 201255350 =====")
+    if 'hide_debug_info' not in options:
+        print("======= Running Python Queue-Based Search Procedure =======")
+        print("===== by: Alejandro Pascual San Roman, SID: 201255350 =====")
 
     initialise_func = problem[0]
     problem_info_func = problem[1]
@@ -67,13 +70,14 @@ def search(problem, strategy, max_nodes, options):
     if initialise_func is not None:  # if initialisation function is not equal to None
         initialise_func()  # Call function to initialise problem
 
-    problem_info_func()  # Call function to print problem information
+    if 'hide_debug_info' not in options: problem_info_func()  # Call function to print problem information
 
     # Print algorithm data
-    print("Strategy:", strategy)
-    print("Search Limit: max_nodes =", max_nodes)
-    print("Options:", options)
-    print("*** starting search ***")
+    if 'hide_debug_info' not in options: 
+        print("Strategy:", strategy)
+        print("Search Limit: max_nodes =", max_nodes)
+        print("Options:", options)
+        print("*** starting search ***\n")
 
     # Record starting time to keep track of time taken to solve
     start_time = time.process_time()
@@ -95,11 +99,11 @@ def search(problem, strategy, max_nodes, options):
             sys.stdout.flush()  # flush output to force immediate printing
 
         if not node_queue:  # if node_queue is empty
-            print("\n:-( <FAILURE> )-:")
+            print("\n\n:-( <FAILURE> )-:")
             print("The entire search space was searched --- this problem has NO SOLUTION!")
             print("Total nodes tested = " + str(nodes_tested + 1))
-            print("Time taken =", time.process_time() - start_time, "seconds\n")
-            return False
+            print("Time taken =", time.process_time() - start_time, "seconds")
+            return -1
 
         first_node = node_queue.pop(0)  # take 1st node from queue
 
@@ -117,12 +121,13 @@ def search(problem, strategy, max_nodes, options):
         # If first node on queue is equal to goal state, print solution
         if goal_test_func(node_get_state(first_node)):
             action_path = node_get_path(first_node)
-            print("\n:-)) *SUCCESS* ((-:")
-            print("The action path to the solution is:")
-            print_action_list(action_path)
-            print("Path length = " + str(len(action_path)))
-            print("Total nodes tested = " + str(nodes_tested + 1))
-            print("Time taken =", time.process_time() - start_time, "seconds\n")
+            if 'hide_debug_info' not in options:
+                print("\n:-)) *SUCCESS* ((-:")
+                print("The action path to the solution is:")
+                print_action_list(action_path)
+                print("Path length = " + str(len(action_path)))
+                print("Total nodes tested = " + str(nodes_tested + 1))
+                print("Time taken =", time.process_time() - start_time, "seconds")
             return action_path
 
         # Expand current node and move children to queue
@@ -130,10 +135,10 @@ def search(problem, strategy, max_nodes, options):
         node_queue = add_to_node_queue(strategy, node_queue, children)
 
     # If number of nodes in max_nodes is expanded without finding a solution, print the following:
-    print("\n:-( <FAILURE> )-:")
-    print("Search aborted --- node limit reached (MAX_NODES=%i)\n" % max_nodes)
-    print("Time taken =", time.process_time() - start_time, "seconds\n")
-    return False
+    print("\n\n:-( <FAILURE> )-:")
+    print("Search aborted --- node limit reached (MAX_NODES=%i)" % max_nodes)
+    print("Time taken =", time.process_time() - start_time, "seconds")
+    return -2
 
 
 # Creates new node with a given state

@@ -73,7 +73,9 @@ from blind_informed_search import *
 
 # blind_informed_search(yora_maze_1, yora_maze_empty, margins=0, scan_diagonals=False)
 # blind_informed_search(yora_maze_1, yora_maze_empty, margins=0, scan_diagonals=True, change_scanning_strategy=True, max_node_increment=4000, max_nodes=2000,)
-blind_informed_search(yora_maze_1, yora_maze_empty, margins=1, scan_diagonals=True, change_scanning_strategy=True, max_nodes=2000,)
+# blind_informed_search(yora_maze_1, yora_maze_empty, margins=2, scan_diagonals=True, change_scanning_strategy=True, max_nodes=3000,)
+
+blind_informed_search(yora_maze_2, yora_maze_empty, margins=2, scan_diagonals=True, change_scanning_strategy=True, max_node_increment=4000, max_nodes=3000,)
 
 # blind_informed_search(yora_maze_1, yora_maze_empty, strategy=('A_star', distance_to_end_heuristic, avoid_turns_cost_function), scan_diagonals=True, print_goal_states=True, margins=2)
 # blind_informed_search(maze_initial_state_2, maze_initial_state_empty)

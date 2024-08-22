@@ -41,6 +41,7 @@ def blind_informed_search(actual_maze, initial_known_maze, margins=0,
 
     # Add margins to the actual maze
     actual_maze_with_margins = add_obstacle_margins(deepcopy(actual_maze), margins)
+    # print_maze(actual_maze_with_margins)
 
     # Current known maze (with added margins)
     known_maze = add_obstacle_margins(deepcopy(initial_known_maze), margins)

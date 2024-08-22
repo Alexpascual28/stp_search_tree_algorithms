@@ -11,9 +11,9 @@ from solver.queue_search  import *
 from maze_problem import *
 from sample_mazes import *
 
-def blind_informed_search(actual_maze, initial_known_maze,
-                          scan_diagonals=False, print_goal_states=False, change_scanning_strategy=False, max_node_increment=2000, margins=0,
-                          strategy=('A_star', distance_to_end_heuristic, avoid_turns_cost_function), max_nodes=500000,
+def blind_informed_search(actual_maze, initial_known_maze, margins=0,
+                          scan_diagonals=False, change_scanning_strategy=False, max_node_increment=2000, max_node_limit=15000, print_goal_states=False,
+                          strategy=('A_star', distance_to_end_heuristic, avoid_turns_cost_function), max_nodes=20000,
                           options=['loop_check', 'print_loops', 'hide_debug_info']):
     
     # Check if the actual and initial mazes are the same size
@@ -73,6 +73,11 @@ def blind_informed_search(actual_maze, initial_known_maze,
                     print("No path found after switching scanning strategy. Adjusting maximum nodes...")
                     current_max_nodes += max_node_increment
                     print("New maximum nodes:", current_max_nodes, '\n')
+
+                    if current_max_nodes > max_node_limit:
+                        print("Current value of maximum nodes to be explored (max_nodes) exceeds the absolute limit. Change settings and try again. Exiting...")
+                        return
+                    
                     continue
 
             # If no path was found, switch scanning strategy and try again
@@ -175,11 +180,3 @@ def add_obstacle_margins(maze, margin):
             if maze[i][j] == -4:
                 maze[i][j] = -2
     return maze
-
-# print_maze(add_obstacle_margins(yora_maze_1, 1))
-
-blind_informed_search(yora_maze_1, yora_maze_empty, margins=2, scan_diagonals=True, print_goal_states=False, change_scanning_strategy=True,
-                      strategy=('A_star', distance_to_end_heuristic, avoid_turns_cost_function), max_nodes=2000,)
-
-# blind_informed_search(yora_maze_1, yora_maze_empty, strategy=('A_star', distance_to_end_heuristic, avoid_turns_cost_function), scan_diagonals=True, print_goal_states=True, margins=2)
-# blind_informed_search(maze_initial_state_2, maze_initial_state_empty)

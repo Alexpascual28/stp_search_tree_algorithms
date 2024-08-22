@@ -13,7 +13,7 @@ from other_problems.Fill_array_problem.FillArray import *
 from other_problems.Fill_list_problem.FillProblem import *
 from other_problems.maze_problem.maze_problem import *
 # from other_problems.maze_problem.blind_informed_search import *
-from other_problems.maze_problem.sample_mazes import *
+# from other_problems.maze_problem.sample_mazes import *
 
 # Redirecting the output to a file
 original = sys.stdout
